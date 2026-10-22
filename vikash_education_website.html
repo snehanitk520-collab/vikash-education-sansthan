@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b70">
+<title>Vikash Education Sansthan | Learn • Grow • Succeed</title>
+<style>
+:root{--navy:#123b70;--blue:#1769aa;--gold:#ffcc43;--orange:#f28c28;--ink:#17243a;--muted:#64748b;--paper:#f6f8fc;--white:#fff;--line:#e4eaf2;--green:#15803d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,a{ -webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+.topline{background:#0b2850;color:#eaf2ff;font-size:.86rem;padding:8px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topline a{color:#ffe08a;font-weight:700}
+header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.logo{width:52px;height:52px;flex-shrink:0;border-radius:50%;background:#fff7c2;border:2px solid var(--gold);display:grid;place-items:center;color:var(--navy);font-size:27px}
+.brand strong{display:block;font-size:1rem;line-height:1.2;color:var(--navy);letter-spacing:.2px}
+.brand small{display:block;font-size:.73rem;color:var(--muted)}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:.92rem;font-weight:700}
+.navlinks a:hover{color:var(--blue)}
+.navlinks .navcta{background:var(--navy);color:white;padding:10px 15px;border-radius:10px}
+.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:9px;padding:7px 11px;font-size:1.25rem}
+.hero{background:radial-gradient(circle at 85% 10%,#2a659a 0,transparent 30%),linear-gradient(125deg,#0b2850,#164c83 68%,#1769aa);color:white;overflow:hidden}
+.hero-inner{max-width:1180px;margin:auto;padding:76px 20px 72px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:48px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#ffffff18;border:1px solid #ffffff38;padding:7px 12px;border-radius:99px;font-size:.83rem;color:#ffdf81;margin-bottom:18px}
+.hero h1{font-size:clamp(2.3rem,5vw,4.1rem);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:620px;color:#e3edf9;font-size:1.07rem;margin-bottom:26px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 18px;border-radius:11px;border:0;font-weight:800;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#142d4e}
+.btn-outline{border:1px solid #ffffff80;color:white;background:#ffffff10}
+.hero-card{background:white;color:var(--ink);padding:27px;border-radius:22px;box-shadow:0 24px 60px #06172d55;transform:rotate(1deg)}
+.hero-card h3{font-size:1.35rem;color:var(--navy);margin-bottom:7px}
+.hero-card>p{font-size:.93rem;color:var(--muted);margin-bottom:18px}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.quick{padding:15px;border-radius:14px;background:#f3f7fc;border:1px solid #e7eef8}
+.quick b{display:block;font-size:1.35rem;color:var(--blue)}
+.quick span{font-size:.82rem;color:var(--muted)}
+.hero-note{margin-top:15px;background:#fff8dd;border-radius:12px;padding:12px;font-size:.88rem;color:#77540c}
+section{padding:72px 20px}
+.container{max-width:1120px;margin:auto}
+.section-head{text-align:center;max-width:700px;margin:0 auto 36px}
+.eyebrow{font-size:.78rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);font-weight:900}
+.section-head h2{font-size:clamp(1.8rem,3vw,2.65rem);line-height:1.2;margin:8px 0 12px;color:var(--navy)}
+.section-head p{color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:white;border:1px solid var(--line);border-radius:17px;padding:24px;box-shadow:0 8px 22px #1b3b5b08}
+.icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:#eaf3ff;font-size:24px;margin-bottom:15px}
+.feature h3{margin-bottom:7px;color:var(--navy)}
+.feature p{font-size:.93rem;color:var(--muted)}
+.courses{background:#eef3fa}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.course{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden}
+.course-top{padding:21px;background:linear-gradient(135deg,#123b70,#1769aa);color:white}
+.course-top .tag{font-size:.75rem;color:#ffe08a;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.course-top h3{margin-top:5px;font-size:1.25rem}
+.course-body{padding:20px}
+.course-body p{color:var(--muted);font-size:.93rem;margin-bottom:13px}
+.course-body ul{list-style:none;font-size:.9rem;color:#34445c}
+.course-body li{margin:7px 0}
+.course-body li:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}
+.course-link{display:inline-block;margin-top:16px;font-weight:800;color:var(--blue)}
+.results{background:white}
+.results-panel{background:#fff8df;border:1px solid #f5e6a8;border-radius:20px;padding:28px}
+.results-panel h3{color:#7b5300;font-size:1.35rem;margin-bottom:8px}
+.results-panel p{color:#705f36;margin-bottom:16px}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.result{background:white;border:1px solid #f1e5b8;border-radius:13px;padding:15px}
+.result strong{display:block;font-size:1.35rem;color:var(--navy)}
+.result span{font-size:.85rem;color:var(--muted)}
+.notice{font-size:.82rem!important;margin-top:14px!important;margin-bottom:0!important}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-box{background:white;border:1px solid var(--line);border-radius:20px;padding:27px}
+.about-box h3{color:var(--navy);margin-bottom:12px}
+.about-box p{color:var(--muted);margin-bottom:12px}
+.checklist{list-style:none}
+.checklist li{margin:10px 0}
+.checklist li:before{content:"✓";color:var(--green);font-weight:900;margin-right:10px}
+.contact{background:linear-gradient(135deg,#0b2850,#164c83);color:white}
+.contact .section-head h2{color:white}
+.contact .section-head p{color:#d8e5f5}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px}
+.contact-info,.contact-form{background:#ffffff0d;border:1px solid #ffffff25;border-radius:18px;padding:24px}
+.contact-info h3,.contact-form h3{margin-bottom:15px}
+.contact-item{display:flex;gap:12px;margin:17px 0;color:#e4edf8}
+.contact-item b{display:block;color:white}
+.contact-item a{color:#ffdf81}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:.85rem;margin-bottom:5px;color:#e4edf8}
+.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #ffffff3b;border-radius:10px;background:#fff;color:var(--ink);outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px #ffcc4330}
+.field textarea{min-height:95px;resize:vertical}
+.form-note{font-size:.8rem;color:#cbd9e9;margin-top:10px}
+footer{background:#071c37;color:#c6d5e8;padding:25px 20px}
+.footer-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.88rem}
+footer strong{color:white}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,140%);background:#102d50;color:white;padding:13px 18px;border-radius:12px;box-shadow:0 10px 35px #0003;z-index:50;transition:.3s;max-width:90%;text-align:center}
+.toast.show{transform:translate(-50%,0)}
+.backtop{position:fixed;bottom:20px;right:18px;background:var(--gold);border:0;border-radius:50%;width:44px;height:44px;font-size:20px;box-shadow:0 8px 20px #0002;display:none}
+@media(max-width:850px){.hero-inner{grid-template-columns:1fr;gap:30px;padding-top:55px}.hero-card{transform:none;max-width:560px}.features,.course-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr}.navlinks{gap:13px}}
+@media(max-width:620px){.topline{justify-content:center;text-align:center}.nav{padding:10px 15px}.menu-btn{display:block}.navlinks{display:none;position:absolute;left:0;right:0;top:74px;background:white;padding:16px 20px 20px;box-shadow:0 12px 20px #122b4915;flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:11px 4px;border-bottom:1px solid var(--line)}.navlinks .navcta{text-align:center;margin-top:10px}.brand strong{font-size:.88rem}.brand small{font-size:.68rem}.logo{width:44px;height:44px;font-size:23px}.hero-inner{padding:45px 18px 48px}.hero h1{letter-spacing:-.7px}.hero p{font-size:1rem}.hero-card{padding:20px}.features,.course-grid,.result-grid{grid-template-columns:1fr}section{padding:55px 17px}.section-head{margin-bottom:27px}.form-row{grid-template-columns:1fr}.results-panel{padding:20px}.footer-inner{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topline">
+  <span>📚 Classes VI–XII • CBSE / ICSE / UP Board</span>
+  <span>📞 <a href="tel:8840507291">8840507291</a> &nbsp; | &nbsp; <a href="tel:8004085170">8004085170</a></span>
+</div>
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="Vikash Education home">
+      <span class="logo">🎓</span>
+      <span><strong>VIKASH EDUCATION</strong><small>Sansthan · Learn • Grow • Succeed</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navLinks">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#courses">Classes</a><a href="#results">Results</a><a href="#contact" class="navcta">Enquire Now</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="badge">⭐ A place to learn with confidence</div>
+      <h1>Your goals.<br><span>Your hard work.</span><br>Your success.</h1>
+      <p>Welcome to Vikash Education Sansthan. We support students with focused learning, concept clarity and regular practice for school examinations.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#courses">Explore Classes <span>→</span></a>
+        <a class="btn btn-outline" href="#contact">Talk to the Centre</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Build strong basics. Aim higher.</h3>
+      <p>Support for school students from Class VI to XII.</p>
+      <div class="quick-grid">
+        <div class="quick"><b>VI–XII</b><span>School classes</span></div>
+        <div class="quick"><b>3 Boards</b><span>CBSE · ICSE · UP</span></div>
+        <div class="quick"><b>Practice</b><span>Learn by doing</span></div>
+        <div class="quick"><b>Guidance</b><span>Study with direction</span></div>
+      </div>
+      <div class="hero-note">💡 Small daily progress can lead to big academic improvements.</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">About our centre</span><h2>Learning that puts students first</h2><p>A supportive learning environment where students can ask questions, practise regularly and work towards their academic goals.</p></div>
+    <div class="features">
+      <article class="feature"><div class="icon">🧠</div><h3>Concept Clarity</h3><p>Focus on understanding topics step by step instead of simply memorising answers.</p></article>
+      <article class="feature"><div class="icon">✍️</div><h3>Practice & Revision</h3><p>Build confidence through written practice, revision and exam-oriented preparation.</p></article>
+      <article class="feature"><div class="icon">🤝</div><h3>Student Guidance</h3><p>Encouragement and guidance to help learners identify doubts and improve steadily.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Our classes</span><h2>Choose the right learning path</h2><p>Contact the centre to confirm subject availability, batch timings and admission details.</p></div>
+    <div class="course-grid">
+      <article class="course"><div class="course-top"><div class="tag">Middle school</div><h3>Classes VI–VIII</h3></div><div class="course-body"><p>Strengthen foundations and develop effective study habits.</p><ul><li>Core subject support</li><li>Homework and doubt help</li><li>Regular revision practice</li></ul><a class="course-link" href="#contact" data-course="Classes VI–VIII">Ask about this class →</a></div></article>
+      <article class="course"><div class="course-top"><div class="tag">Secondary</div><h3>Classes IX–X</h3></div><div class="course-body"><p>Prepare for school assessments and board examination goals.</p><ul><li>CBSE / ICSE / UP Board</li><li>Concept-based preparation</li><li>Practice and revision</li></ul><a class="course-link" href="#contact" data-course="Classes IX–X">Ask about this class →</a></div></article>
+      <article class="course"><div class="course-top"><div class="tag">Senior secondary</div><h3>Classes XI–XII</h3></div><div class="course-body"><p>Build subject knowledge and prepare with a consistent study routine.</p><ul><li>Science and Commerce support</li><li>Board-focused preparation</li><li>Topic-wise practice</li></ul><a class="course-link" href="#contact" data-course="Classes XI–XII">Ask about this class →</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow">Student achievements</span><h2>Celebrate effort and progress</h2><p>Past student results are a reminder of what consistent study and guidance can help students work towards.</p></div>
+    <div class="results-panel">
+      <h3>Our Result 2020–21</h3>
+      <p>The centre's result poster highlights these scores. Results are from the 2020–21 session and should not be read as a guarantee of future performance.</p>
+      <div class="result-grid">
+        <div class="result"><strong>92.8%</strong><span>Arpita · Class X</span></div>
+        <div class="result"><strong>92.2%</strong><span>Meera Mishra · Class XII</span></div>
+        <div class="result"><strong>91.6%</strong><span>Shivam · Class X</span></div>
+      </div>
+      <p class="notice">Please contact the centre for current admission details, subjects, fees and batch timings.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container about-grid">
+    <div><span class="eyebrow">Our approach</span><h2 style="font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;color:var(--navy);margin:9px 0 14px">Every question is a chance to learn.</h2><p style="color:var(--muted)">Good learning starts with curiosity. We encourage students to keep asking, practising and improving one topic at a time.</p></div>
+    <div class="about-box"><h3>What students can work towards</h3><ul class="checklist"><li>Clearer understanding of subjects</li><li>More regular study and revision</li><li>Better exam preparation habits</li><li>Confidence in asking questions</li><li>A steady, goal-oriented routine</li></ul></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head"><span class="eyebrow" style="color:var(--gold)">Admissions & enquiries</span><h2>Let's talk about your learning goals</h2><p>Call the centre or fill in this form to prepare an enquiry message.</p></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Visit or contact us</h3>
+        <div class="contact-item"><span>📍</span><div><b>Address</b>Nasirpur, Mata Katra, Hyderabad Gate,<br>Varanasi, Uttar Pradesh</div></div>
+        <div class="contact-item"><span>📞</span><div><b>Phone</b><a href="tel:8840507291">8840507291</a><br><a href="tel:8004085170">8004085170</a></div></div>
+        <div class="contact-item"><span>🎒</span><div><b>Classes</b>VI to XII · CBSE / ICSE / UP Board</div></div>
+        <div class="contact-item"><span>📝</span><div><b>Admission information</b>Call to confirm current subjects, fees and timings.</div></div>
+      </div>
+      <form class="contact-form" id="enquiryForm">
+        <h3>Student enquiry</h3>
+        <div class="form-row">
+          <div class="field"><label for="studentName">Student name *</label><input id="studentName" name="studentName" required placeholder="Enter your name" autocomplete="name"></div>
+          <div class="field"><label for="studentClass">Class *</label><select id="studentClass" name="studentClass" required><option value="">Select class</option><option>VI</option><option>VII</option><option>VIII</option><option>IX</option><option>X</option><option>XI</option><option>XII</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="board">Board</label><select id="board" name="board"><option>CBSE</option><option>ICSE</option><option>UP Board</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="phone">Contact number *</label><input id="phone" name="phone" required inputmode="tel" pattern="[0-9+\-\s]{10,15}" placeholder="Your phone number"></div>
+        </div>
+        <div class="field"><label for="message">What would you like to know?</label><textarea id="message" name="message" placeholder="Subjects, batch timings, admission, etc."></textarea></div>
+        <button class="btn btn-gold" type="submit">Prepare WhatsApp Enquiry ↗</button>
+        <p class="form-note">This demo opens WhatsApp with your enquiry. It does not store your details on this website.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="footer-inner"><span>© <span id="year"></span> <strong>Vikash Education Sansthan</strong>. All rights reserved.</span><span>Learn with confidence. Grow with consistency.</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="backtop" id="backtop" aria-label="Back to top">↑</button>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+  const isOpen=navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',String(isOpen));
+  menuBtn.textContent=isOpen?'✕':'☰';
+});
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+  navLinks.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.textContent='☰';
+}));
+document.querySelectorAll('[data-course]').forEach(link=>link.addEventListener('click',()=>{
+  document.getElementById('message').value='I would like to know about '+link.dataset.course+'.';
+}));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const toast=document.getElementById('toast');
+let toastTimer;
+function showToast(message){
+  toast.textContent=message;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toast.classList.remove('show'),4500);
+}
+document.getElementById('enquiryForm').addEventListener('submit',function(event){
+  event.preventDefault();
+  if(!this.reportValidity())return;
+  const data=new FormData(this);
+  const name=String(data.get('studentName')).trim();
+  const studentClass=String(data.get('studentClass'));
+  const board=String(data.get('board'));
+  const phone=String(data.get('phone')).trim();
+  const message=String(data.get('message')).trim();
+  const text=`Hello Vikash Education Sansthan, I would like to enquire about admission.%0AStudent name: ${encodeURIComponent(name)}%0AClass: ${encodeURIComponent(studentClass)}%0ABoard: ${encodeURIComponent(board)}%0AContact number: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(message||'Please share admission details.')}`;
+  // Replace with the centre's verified WhatsApp number if it differs.
+  const whatsappNumber='918840507291';
+  showToast('Opening WhatsApp to send your enquiry…');
+  window.open(`https://wa.me/${whatsappNumber}?text=${text}`,'_blank','noopener');
+});
+const backtop=document.getElementById('backtop');
+window.addEventListener('scroll',()=>{backtop.style.display=window.scrollY>450?'block':'none'});
+backtop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
